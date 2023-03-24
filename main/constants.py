@@ -1,15 +1,15 @@
 #MENU
 MENU = '''
     |-------------------------------------------------------------------|
-    |                     Bienvenido/as a RE SOFTWARE                   |
+    |                 Bienvenido/as a RE SOFTWARE                       |
     |                                                                   |
-    |                        Elija una opcion                           |
+    |                      Elija una opcion                             |
     |                                                                   |
     | 1. Listar todas las sesiones por ID                               |
     | 2. Listar los inicios de session en un periodo de tiempo          |
     | 3. Tiempo total de la sesion de un usuario                        |
     | 4. Mac de un usuario                                              |
-    | 5. Listar usuarios conectados a una AP                            |
+    | 5. Listar usuarios conectados a una AP con un rango de fechas     |
     | 6. Listar usuarios conectados a una AP en una fecha determinada   |
     | 6. Salir                                                          |
     |-------------------------------------------------------------------|
@@ -20,9 +20,9 @@ MENU = '''
 DATETIME_REGEX = r'\d{2}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}'
 
 #PATHS
-PATH_TXT = r"/home/lucas1608ar/Universidad/Project-RE/docs/usuarios.txt"
+PATH_TXT = r"../docs/usuarios.txt"
 FULLPATH_TXT = r"/home/lucas1608ar/Universidad/Project-RE/docs/usuarios.txt"
-PATH_XLSX = r"/Proyect-RE/docs/usuarios.xlsx"
+PATH_XLSX = r"../docs/usuarios.xlsx"
 FULLPATH_XLSX = r"/home/lucas1608ar/Universidad/Project-RE/docs/usuarios.xlsx"
 PATH_XLSX_USER = r"/home/lucas1608ar/Universidad/Project-RE/files/UserSession.xlsx"
 PATH_DATE_USR = r"/home/lucas1608ar/Universidad/Project-RE/files/DateUser.xlsx"
