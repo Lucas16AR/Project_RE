@@ -1,0 +1,5 @@
+#1: anda perfecto
+#2: no muestra nada, no indexa nada, ver funcion de que trae, revisar que no trae
+#3: anda perfecto
+#4: anda, pero muestra la cantidad de veces que se conecto, debe mostrar a que dispositivo se conecto
+#5: anda a la mitad, muestra por rango, agregar la opcion de una determinada fecha
