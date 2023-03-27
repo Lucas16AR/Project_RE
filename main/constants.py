@@ -9,9 +9,10 @@ MENU = '''
     | 2. Listar los inicios de session en un periodo de tiempo          |
     | 3. Tiempo total de la sesion de un usuario                        |
     | 4. Mac de un usuario                                              |
-    | 5. Listar usuarios conectados a una AP con un rango de fechas     |
-    | 6. Listar usuarios conectados a una AP en una fecha determinada   |
-    | 6. Salir                                                          |
+    | 5. Mac 
+    | 6. Listar usuarios conectados a una AP con un rango de fechas     |
+    | 7. Listar usuarios conectados a una AP en una fecha determinada   |
+    | 8. Salir                                                          |
     |-------------------------------------------------------------------|
 
     '''

@@ -2,5 +2,6 @@
 #2: anda perfecto
 #3: no muestra nada, no indexa nada, ver funcion de que trae, revisar que no trae
 #4: anda, pero muestra la cantidad de veces que se conecto, debe mostrar a que dispositivo se conecto
-#5: anda perfecto, pero debo sacar las partes que no utilizo
-#6: agregar la opcion de una fecha determinada
+#5: hacer
+#6: anda perfecto, pero debo sacar las partes que no utilizo
+#7: agregar la opcion de una fecha determinada

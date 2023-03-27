@@ -22,13 +22,13 @@ def main():
         elif inp == '4':
             analyzer.mac_user_devices()
             ft.return_menu()
-        elif inp == '5':
+        elif inp == '6':
             analyzer.mac_ap_date1()
             ft.return_menu()
-        elif inp == '6':
+        elif inp == '7':
             analyzer.mac_ap_date2()
             ft.return_menu()
-        elif inp == '7':
+        elif inp == '8':
             ft.exit_program()
             break
         elif inp == 'e':

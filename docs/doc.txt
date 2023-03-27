@@ -1,0 +1,29 @@
+Proyecto Final de Automatas & Gramaticas 2021
+
+Este programa en Python, consta en leer un archivo y que este filtre diferentes resultados. Se utiliza expresiones regulares.
+Se lee el archivo .xlsx y despues en el menu se elige una opcion para mostrar un resultado con los filtros elegidos.
+
+La puesta en marcha del proyecto constaba en organizar primero el repositorio "Project-RE" y las carpetas que contiene.
+En la carpeta "docs" se encuentran los archivos a ser leidos y la documentacion del proyecto.
+En la carpeta "files" se encuentran los archivos .xlsx donde estaran todos los resultados del programa.
+En la carpeta "main" se encuentran todos las archivos .py que contienen el codigo para la ejecucion del programa.
+
+La carpeta "main" contiene 5 archivos .py.
+
+El archivo "clear.py" limpia la pantalla de la consola según el sistema operativo a usar.
+Estas líneas importan dos módulos de Python, "os" y "platform". El módulo "os" proporciona una forma de interactuar 
+con el sistema operativo subyacente y el módulo platform proporciona información sobre la 
+plataforma y el sistema operativo en el que se está ejecutando Python.
+Es una función útil para mejorar la legibilidad de la salida en una interfaz de línea 
+de comandos, ya que permite limpiar la pantalla después de cada ejecución de un comando o programa.
+
+El archivo "constants.py" sirve para contener todas las constantes que se utilizan en diferentes partes del proyecto.
+Las constantes sirven para que el codigo quede mas corto y limpio, de esa manera, no tengo la necesidad de estar definiendo
+las lineas que se muestran por pantalla.
+Primero, se define un menú con diferentes opciones. Cada opción se muestra en una línea separada y se identifica con un número. 
+Luego, la expresion regular y rutas de archivo que se utilizan en el proyecto.
+A continuación, se definen algunas cadenas de entrada para las preguntas que se le hacen al usuario. 
+También hay algunas cadenas de mensaje, que sirven como auxiliar en casos de error, validacion, espera, etc.
+Finalmente, hay algunas cadenas que se utilizan para la salida.
+
+El archivo "analyzer.py", contiene todas las funciones que se llamaran por pantalla y que realizaran los filtros que se pidan.
