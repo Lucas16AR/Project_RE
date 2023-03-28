@@ -1,5 +1,7 @@
 Proyecto Final de Automatas & Gramaticas 2021
 
+Proyecto RE SOFTWARE
+
 Este programa en Python, consta en leer un archivo y que este filtre diferentes resultados. Se utiliza expresiones regulares.
 Se lee el archivo .xlsx y despues en el menu se elige una opcion para mostrar un resultado con los filtros elegidos.
 
@@ -37,6 +39,15 @@ Explicación de la expresión regular:
 * T: El carácter 'T' o un espacio en blanco para separar la fecha y la hora
 * \d{2}:\d{2}:\d{2}: La hora en formato HH:MM:SS
 * $: Fin de la cadena
+
+El archivo "functions.py" define algunas funciones que son utilizadas en el programa principal.
+La función "help()" muestra un mensaje de ayuda y pregunta al usuario si desea ver los datos en el archivo Excel. Si el usuario ingresa "y", 
+se llama a la función print_xlsx() del objeto User para imprimir los datos del archivo Excel. Si el usuario ingresa "n", la función simplemente regresa. 
+Si el usuario ingresa cualquier otra cosa, se llama a la función "error()".
+La función "return_menu()" pregunta al usuario si desea regresar al menú principal. Si el usuario ingresa "y", se muestra un mensaje y la función regresa. 
+Si el usuario ingresa "n", se llama a la función "exit_program(): y se sale del programa. Si el usuario ingresa cualquier otra cosa, se llama a la función "error()".
+La función "exit_program()" muestra un mensaje de salida y termina el programa.
+La función "error()" muestra un mensaje de error y luego llama a la función "return_menu()".
 
 El archivo "analyzer.py", contiene todas las funciones que se llamaran por pantalla y que realizaran los filtros que se pidan.
 
@@ -105,8 +116,21 @@ la función buscará la información para el día específico ingresado y lo tra
 Si se ingresa una fecha o dirección MAC inválida, la función mostrará un mensaje de error correspondiente en la consola.
 La función también incluye algunas pausas breves para mejorar la legibilidad del texto en la consola.
 
-#El punto 7
-
+#El punto 7 es una funcion que busca la lista de usuarios conectados a una AP en una fecha específica.
+Se refiere a una función llamada mac_ap_date2 que recopila información de un archivo de Excel y la filtra por 
+la dirección MAC de un punto de acceso y una fecha específica proporcionada por el usuario. 
+La función inicia con una impresión de línea en blanco y compila una expresión regular para verificar el formato de la fecha ingresada por el usuario.
+Se solicita al usuario que ingrese la fecha.
+Se valida la fecha ingresada utilizando la expresión regular compilada.
+Si la fecha es válida, se muestra un mensaje de confirmación y se solicita al usuario que ingrese la dirección MAC del punto de acceso.
+Se muestra un mensaje de búsqueda de datos y se llama a una función operate_xlsx_file para cargar los datos desde un archivo de Excel.
+La columna de "Inicio de Conexion" se convierte en una columna de marca de tiempo utilizando la función "pd.to_datetime".
+Si la dirección MAC del punto de acceso está presente en los datos cargados, se filtra la información para incluir solo 
+las filas que corresponden a la dirección MAC y la fecha especificada por el usuario.
+La información filtrada se imprime en la pantalla.
+Los datos filtrados se guardan en un archivo xlsx. llamado "Mac_AP_Date.xlsx".
+Si la dirección MAC del punto de acceso no está presente en los datos, se muestra un mensaje de que no se encontraron coincidencias.
+Si la fecha no es válida, se muestra un mensaje de que la fecha ingresada es incorrecta.
 
 El archivo "main.py" utiliza los módulos constants, functions y analyzer para proporcionar una interfaz de línea de comandos para el usuario. 
 El usuario puede ingresar diferentes opciones para realizar consultas y análisis de los datos contenidos en el archivo "usuarios.xlsx".

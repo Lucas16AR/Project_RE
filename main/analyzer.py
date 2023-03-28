@@ -59,7 +59,11 @@ class Analyzer:
         if len(sessions) == 0:
             print(f"No se encontraron sesiones para el usuario {user_id} en el rango de fechas especificado.")
         else:
+            print(cs.JUMP_LINE)
+            time.sleep(1)
             print(sessions)
+            print(cs.JUMP_LINE)
+            time.sleep(1)
             sessions.to_excel(r"../files/User_Sessions_Date.xlsx", index=False)
             print(f"Se encontraron {len(sessions)} sesiones para el usuario {user_id} en el rango de fechas especificado.")
             print(f"Las sesiones se han guardado en el archivo 'User_Sessions_Date.xlsx'.")
@@ -227,26 +231,6 @@ class Analyzer:
         time.sleep(0.1)
 
 
-#--------------------------------------------------------------------------------------------------------------------------
-#number5
-#    def mac_user_devices2(self):
-#            print("Ingrese la MAC del usuario:")
-#            inp = input()
-#            print("Buscando datos...")
-#            df = self.operate_xlsx_file()
-#
-#            if inp in df.values:
-#                df_filtered = df[df['MAC Cliente'] == inp]
-#                devices_count = df_filtered.groupby('MAC AP')['MAC Cliente'].count()
-#                print("\nMAC de usuario: ", inp)
-#                print(devices_count)
-#                devices_count.to_excel("devices_count.xlsx")
-#                print("Datos guardados en devices_count.xlsx")
-#            else:
-#                print("No se encontraron datos para la MAC ingresada")
-#            time.sleep(0.1)
-
-
 #number7
     def mac_ap_date2(self):
         print(cs.JUMP_LINE)
@@ -267,10 +251,15 @@ class Analyzer:
             df['Inicio de Conexion'] = pd.to_datetime(df['Inicio de Conexion'])
             if mac_ap_input in df.values:
                 df_loc = df.loc[:,["MAC AP", "Usuario", "Inicio de Conexion", "Fin de Conexio"]]
-                df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexion"].str.startswith(date_input))]
+                df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexion"].dt.date == pd.to_datetime(date_input).date())]
                 print(df_mac_date)
-                df_mac_date.to_excel(cs.PATH_MAC_DT)
-                print(cs.JUMP_LINE, cs.TO_EXCEL)
+                time.sleep(2)
+                df_mac_date.to_excel(r"../files/Mac_AP_Date.xlsx", index=False)
+                time.sleep(1)
+                print(cs.JUMP_LINE)
+                print(f"La cantidad de veces que se conecto en una fecha especifica se guardara en el archivo 'Mac_AP_Date.xlsx'")
+                print(cs.JUMP_LINE)
+                time.sleep(2)
             else:
                 print(cs.JUMP_LINE, cs.NO_MATCH)
         else:

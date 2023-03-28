@@ -4,7 +4,9 @@ import functions as ft
 import analyzer as an
 
 def main():
+
     analyzer = an.Analyzer()
+
     while True:
         clear.clear()
         print(cs.MENU)

@@ -4,4 +4,4 @@
 #4: completo
 #5: completo
 #6: completo
-#7: agregar la opcion de una fecha determinada
+#7: completo
