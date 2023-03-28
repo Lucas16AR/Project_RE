@@ -1,7 +1,7 @@
-#1: completo
-#2: completo
-#3: completo
-#4: completo
-#5: anda, ultimar detalles
-#6: completo
+#1: anda perfecto
+#2: anda perfecto
+#3: no muestra nada, no indexa nada, ver funcion de que trae, revisar que no trae
+#4: anda, pero muestra la cantidad de veces que se conecto, debe mostrar a que dispositivo se conecto
+#5: hacer ese punto, mostrar la cantidad de veces que se conecto, debe mostrar a que dispositivo se conecto
+#6: anda perfecto, pero debo sacar las partes que no utilizo
 #7: agregar la opcion de una fecha determinada
