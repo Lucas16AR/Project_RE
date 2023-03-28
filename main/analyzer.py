@@ -122,7 +122,32 @@ class Analyzer:
         time.sleep(1)
 
 
-
+#number5
+    def mac_user_devices2(self):
+        print(cs.JUMP_LINE, cs.LOADING_DATA)
+        time.sleep(1)
+        print(cs.JUMP_LINE)
+        inp = input(cs.MAC_USER_INP)
+        print(cs.JUMP_LINE)
+        print(cs.SEARCHING_DATA)
+        df = self.operate_xlsx_file()
+        df['MAC Cliente'].fillna(value='', inplace=True)
+        macs = df[df['MAC Cliente'].str.contains(inp)]
+        if not macs.empty:
+            mac_user = macs.groupby(['MAC AP', 'Usuario']).size().reset_index(name='Cantidad de Veces Utilizada')
+            mac_user['Dispositivo'] = inp
+            print(cs.JUMP_LINE)
+            print(mac_user)
+            mac_user.to_excel(r"../files/Mac_User_Info.xlsx", index=False)
+            time.sleep(1)
+            print(cs.JUMP_LINE)
+            print(f"La cantidad de veces que se conecto se guardara en el archivo 'Mac_User_Info.xlsx'")
+            print(cs.JUMP_LINE)
+            time.sleep(1)
+        else:
+            print(cs.JUMP_LINE)
+            print(cs.MAC_NOT_FOUND)
+        time.sleep(0.1)
 
 
 #number6
@@ -203,30 +228,6 @@ class Analyzer:
 
 
 #--------------------------------------------------------------------------------------------------------------------------
-#number5
-    def mac_user_devices2(self):
-        print(cs.JUMP_LINE)
-        inp = input(cs.MAC_USER_INP)
-        print(cs.JUMP_LINE)
-        print(cs.SEARCHING_DATA)
-        df = self.operate_xlsx_file()
-        df['MAC Cliente'].fillna(value='', inplace=True)
-        macs = df[df['MAC Cliente'].str.contains(inp)]
-        if not macs.empty:
-            mac_user = macs.groupby(['MAC AP', 'Usuario']).size().reset_index(name='Cantidad de Veces Utilizada')
-            mac_user['Dispositivo'] = inp
-            print(cs.JUMP_LINE)
-            print(mac_user)
-            mac_user.to_excel(r"../files/Mac_User_Info.xlsx", index=False)
-            print(cs.JUMP_LINE)
-        else:
-            print(cs.JUMP_LINE)
-            print(cs.MAC_NOT_FOUND)
-        time.sleep(0.1)
-
-
-
-
 #number5
 #    def mac_user_devices2(self):
 #            print("Ingrese la MAC del usuario:")

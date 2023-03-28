@@ -2,6 +2,6 @@
 #2: completo
 #3: completo
 #4: completo
-#5: anda, ultimar detalles
+#5: completo
 #6: completo
 #7: agregar la opcion de una fecha determinada

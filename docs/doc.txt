@@ -38,7 +38,6 @@ Explicación de la expresión regular:
 * \d{2}:\d{2}:\d{2}: La hora en formato HH:MM:SS
 * $: Fin de la cadena
 
-
 El archivo "analyzer.py", contiene todas las funciones que se llamaran por pantalla y que realizaran los filtros que se pidan.
 
 #El punto 1 es una función de búsqueda que busca sesiones de usuario en un archivo de Excel. 
@@ -83,7 +82,17 @@ Luego, agrupa las filas por "MAC Cliente" y "Usuario" y cuenta cuántas veces se
 Finalmente, la función muestra la tabla resultante en la consola y la guarda en un archivo de Excel en la ruta especificada en "cs.PATH_MAC_USER".
 Si la dirección MAC no se encuentra en el DataFrame, la función muestra un mensaje indicando que la dirección MAC no se encontró.
 
-#El punto 5
+#El punto 5 es una funcion que busca las veces que un dispositivo se ha conectado junto con el usuario que ha utilizado el dispositivo y la cantidad de veces que ha sido utilizado.
+Primero, se muestra un mensaje de carga de datos y se espera un segundo antes de pedirle al usuario que ingrese la dirección MAC del dispositivo que desea buscar. 
+Luego, se carga el archivo xlsx utilizando el método operate_xlsx_file() y se busca en la columna "MAC Cliente" del DataFrame 
+todas las filas que contengan la dirección MAC ingresada por el usuario utilizando el método str.contains(). 
+Tambien en el código se agrego una línea para rellenar los valores nulos en la columna "MAC Cliente" con una cadena vacía, esto se hace para evitar errores en la búsqueda.
+Si se encuentra la dirección MAC en el archivo, se agrupa por las columnas "MAC AP" y "Usuario" utilizando el método groupby(), 
+luego se cuenta la cantidad de veces que se ha utilizado el dispositivo con la función size() y se restablece el índice del DataFrame con el método reset_index(). 
+A continuación, se agrega una nueva columna al DataFrame con el valor de la dirección MAC ingresada por el usuario y se muestra el resultado. 
+Por último, se guarda el resultado en un nuevo archivo xlsx utilizando el método to_excel() y se muestra un mensaje 
+indicando que la cantidad de veces que se conectó el dispositivo se ha guardado en el archivo "Mac_User_Info.xlsx".
+En caso de que no se encuentre la dirección MAC en el archivo, se muestra un mensaje indicando que no se ha encontrado la dirección MAC ingresada.
 
 #El punto 6 es una función que busca la lista de usuarios conectados a una AP en un rango de fechas.
 La función mac_ap_date1 permite buscar información en un archivo de Excel que contiene datos de conexión a internet de usuarios y dispositivos en una red.
@@ -97,3 +106,11 @@ Si se ingresa una fecha o dirección MAC inválida, la función mostrará un men
 La función también incluye algunas pausas breves para mejorar la legibilidad del texto en la consola.
 
 #El punto 7
+
+
+El archivo "main.py" utiliza los módulos constants, functions y analyzer para proporcionar una interfaz de línea de comandos para el usuario. 
+El usuario puede ingresar diferentes opciones para realizar consultas y análisis de los datos contenidos en el archivo "usuarios.xlsx".
+El programa comienza mostrando un menú de opciones al usuario, y luego se queda en un ciclo mientras espera que el usuario ingrese una opción. 
+Si la opción ingresada es válida, el programa llama a la función correspondiente del objeto analyzer, que realiza la operación de análisis deseada y muestra los resultados en la pantalla.
+La función return_menu() de functions se utiliza para pausar el programa y esperar a que el usuario presione Enter antes de volver al menú principal. 
+Si el usuario ingresa una opción inválida, se muestra un mensaje de error y se le pide que ingrese otra opción.
