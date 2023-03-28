@@ -8,8 +8,8 @@ MENU = '''
     | 1. Listar todas las sesiones por ID                               |
     | 2. Listar los inicios de session en un periodo de tiempo          |
     | 3. Tiempo total de la sesion de un usuario                        |
-    | 4. Mac de un usuario                                              |
-    | 5. Mac 
+    | 4. Mac de un usuario y cantidad de veces que se uso               |
+    | 5. Mac de un usuario y a que dispositivo se conecto               |
     | 6. Listar usuarios conectados a una AP con un rango de fechas     |
     | 7. Listar usuarios conectados a una AP en una fecha determinada   |
     | 8. Salir                                                          |

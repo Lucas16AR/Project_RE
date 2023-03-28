@@ -20,7 +20,10 @@ def main():
             analyzer.total_session_time()
             ft.return_menu()
         elif inp == '4':
-            analyzer.mac_user_devices()
+            analyzer.mac_user_devices1()
+            ft.return_menu()
+        elif inp == '5':
+            analyzer.mac_user_devices2()
             ft.return_menu()
         elif inp == '6':
             analyzer.mac_ap_date1()
