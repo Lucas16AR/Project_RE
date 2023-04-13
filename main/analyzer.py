@@ -16,7 +16,7 @@ class Analyzer:
         print(cs.JUMP_LINE, cs.LOADING_DATA)
         print(cs.JUMP_LINE)
         df = self.operate_xlsx_file()
-        user_id = input("Ingrese el ID del usuario: ")
+        user_id = input(cs.UN_INP)
         sessions = df.loc[df["Usuario"]==user_id, ["Usuario","Inicio de Conexion"]]
         print(cs.JUMP_LINE)
         print(cs.SEARCHING_DATA)
@@ -26,7 +26,7 @@ class Analyzer:
             print(f"No se encontraron sesiones para el usuario {user_id}")
         else:
             print(sessions)
-            sessions.to_excel(r"../files/Users_Sessions_ID.xlsx", index=False)
+            sessions.to_excel(cs.USERS_SESSIONS, index=False)
             print(f"Se encontraron {len(sessions)} sesiones para el usuario {user_id}.")
             print(f"Las sesiones se han guardado en el archivo 'Users_Sessions_ID.xlsx'.")
 
@@ -38,7 +38,7 @@ class Analyzer:
         df = self.operate_xlsx_file()
         date_regex = re.compile(cs.DATETIME_REGEX)
         print(cs.DT_RANGE_MSG)
-        time.sleep(2)
+        time.sleep(1)
         print(cs.JUMP_LINE)
         date_1 = input(cs.DATETIME_INPUT_1)
         if not date_regex.fullmatch(date_1):
@@ -50,7 +50,7 @@ class Analyzer:
             print(cs.JUMP_LINE, cs.WRONG_DT_2)
             return
         print(cs.JUMP_LINE, cs.VALIDATE_CORRECT, cs.JUMP_LINE)
-        user_id = input("Ingrese el ID del usuario: ")
+        user_id = input(cs.UN_INP)
         sessions = df.loc[(df["Usuario"]==user_id) & (df["Inicio de Conexion"]>=date_1) & (df["Inicio de Conexion"]<=date_2), ["Usuario","Inicio de Conexion"]]
         print(cs.JUMP_LINE)
         print(cs.SEARCHING_DATA)
@@ -64,7 +64,7 @@ class Analyzer:
             print(sessions)
             print(cs.JUMP_LINE)
             time.sleep(1)
-            sessions.to_excel(r"../files/User_Sessions_Date.xlsx", index=False)
+            sessions.to_excel(cs.USERS_SESSIONS, index=False)
             print(f"Se encontraron {len(sessions)} sesiones para el usuario {user_id} en el rango de fechas especificado.")
             print(f"Las sesiones se han guardado en el archivo 'User_Sessions_Date.xlsx'.")
 
@@ -92,7 +92,7 @@ class Analyzer:
         else:
             print(cs.JUMP_LINE, cs.USER_NOT_FOUND)
         if total_time_df > 0:
-            user_df.to_excel(r"../files/Total_Session_Time.xlsx", index=False)
+            user_df.to_excel(cs.TOTAL_SESSION_TIME, index=False)
             print(f"El tiempo total del usuario se guardaron en el archivo 'Total_Session_Time.xlsx'")
         time.sleep(1)
 
@@ -115,7 +115,7 @@ class Analyzer:
             time.sleep(1)
             print(mac_user)
             print(cs.JUMP_LINE)
-            mac_user.to_excel(r"../files/Mac_User.xlsx", index=False)
+            mac_user.to_excel(cs.MAC_USER, index=False)
             time.sleep(1)
             print(f"La cantidad de veces que se conecto se guardara en el archivo 'Mac_User.xlsx'")
             print(cs.JUMP_LINE)
@@ -142,7 +142,7 @@ class Analyzer:
             mac_user['Dispositivo'] = inp
             print(cs.JUMP_LINE)
             print(mac_user)
-            mac_user.to_excel(r"../files/Mac_User_Info.xlsx", index=False)
+            mac_user.to_excel(cs.MAC_USER_INFO, index=False)
             time.sleep(1)
             print(cs.JUMP_LINE)
             print(f"La cantidad de veces que se conecto se guardara en el archivo 'Mac_User_Info.xlsx'")
@@ -184,7 +184,7 @@ class Analyzer:
                     df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexion"].between(date_1, date_2))]
                     print(df_mac_date)
                     time.sleep(2)
-                    df_mac_date.to_excel(r"../files/Mac_AP_Range.xlsx", index=False)
+                    df_mac_date.to_excel(cs.MAC_AP_RANGE, index=False)
                     time.sleep(1)
                     print(cs.JUMP_LINE)
                     print(f"La cantidad de veces que se conecto con el rango de fechas se guardara en el archivo 'Mac_AP_Range.xlsx'")
@@ -218,7 +218,7 @@ class Analyzer:
                     df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexion"].between(date_1, date_2))]
                     print(df_mac_date)
                     time.sleep(2)
-                    df_mac_date.to_excel(r"../files/Mac_AP_Range.xlsx", index=False)
+                    df_mac_date.to_excel(cs.MAC_AP_RANGE, index=False)
                     time.sleep(1)
                     print(cs.JUMP_LINE)
                     print(f"La cantidad de veces que se conecto con el rango de fechas se guardara en el archivo 'Mac_AP_Range.xlsx'")
@@ -254,7 +254,7 @@ class Analyzer:
                 df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexion"].dt.date == pd.to_datetime(date_input).date())]
                 print(df_mac_date)
                 time.sleep(2)
-                df_mac_date.to_excel(r"../files/Mac_AP_Date.xlsx", index=False)
+                df_mac_date.to_excel(cs.MAC_AP_DATE, index=False)
                 time.sleep(1)
                 print(cs.JUMP_LINE)
                 print(f"La cantidad de veces que se conecto en una fecha especifica se guardara en el archivo 'Mac_AP_Date.xlsx'")
