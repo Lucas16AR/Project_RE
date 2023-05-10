@@ -45,7 +45,8 @@ La función "help()" muestra un mensaje de ayuda y pregunta al usuario si desea 
 se llama a la función print_xlsx() del objeto User para imprimir los datos del archivo Excel. Si el usuario ingresa "n", la función simplemente regresa. 
 Si el usuario ingresa cualquier otra cosa, se llama a la función "error()".
 La función "return_menu()" pregunta al usuario si desea regresar al menú principal. Si el usuario ingresa "y", se muestra un mensaje y la función regresa. 
-Si el usuario ingresa "n", se llama a la función "exit_program(): y se sale del programa. Si el usuario ingresa cualquier otra cosa, se llama a la función "error()".
+Si el usuario ingresa "n", se llama a la función "exit_program(): y se sale del programa. 
+Si el usuario ingresa cualquier otra cosa, se llama a la función "error()".
 La función "exit_program()" muestra un mensaje de salida y termina el programa.
 La función "error()" muestra un mensaje de error y luego llama a la función "return_menu()".
 
@@ -64,13 +65,15 @@ Finalmente, la función muestra un mensaje que indica cuántas sesiones se encon
 #El punto 2 es otra función de búsqueda que busca sesiones de usuario en un archivo de Excel pero en un rango de fechas específico. 
 La función utiliza una expresión regular para validar la entrada de fecha y hora del usuario.
 Primero, la función llama a la función "operate_xlsx_file()" para cargar el archivo de Excel en un DataFrame de Pandas.
-Luego, la función solicita al usuario que ingrese dos fechas y horas. El primer mensaje de impresión (cs.DT_RANGE_MSG) indica al usuario que debe ingresar un rango de fechas y horas. 
+Luego, la función solicita al usuario que ingrese dos fechas y horas. 
+El primer mensaje de impresión (cs.DT_RANGE_MSG) indica al usuario que debe ingresar un rango de fechas y horas. 
 El segundo mensaje de impresión (cs.JUMP_LINE) es simplemente una línea en blanco para mejorar la legibilidad de la salida en la consola.
 La función utiliza una expresión regular para validar la entrada de fecha y hora ingresada por el usuario. 
 Si la entrada no coincide con el formato de fecha y hora esperado, se muestra un mensaje de error y la función devuelve inmediatamente.
 Si las entradas son válidas, la función utiliza la función "loc" de Pandas para filtrar el DataFrame y devolver solo las filas que 
 contienen el ID de usuario ingresado por el usuario y que están dentro del rango de fechas especificado.
-Si la longitud de las sesiones devueltas es cero, la función muestra un mensaje indicando que no se encontraron sesiones para ese usuario en el rango de fechas especificado. 
+Si la longitud de las sesiones devueltas es cero, la función muestra un mensaje indicando 
+que no se encontraron sesiones para ese usuario en el rango de fechas especificado. 
 Si no es cero, la función muestra las sesiones encontradas y las guarda en un archivo de Excel llamado "User_Sessions_Date.xlsx" en la ruta "../files/". 
 Finalmente, la función muestra un mensaje que indica cuántas sesiones se encontraron y que se han guardado en el archivo de Excel.
 
@@ -83,7 +86,8 @@ para buscar cualquier coincidencia de texto en la columna "Usuario".
 Después, se crea un nuevo DataFrame con las columnas "Usuario" y "Session Time" del DataFrame original. 
 Luego, se filtra este nuevo DataFrame para excluir cualquier fila que tenga un valor nulo o NaN en la columna "Usuario", utilizando el método .notnull().
 Finalmente, se calcula el tiempo total de sesión del usuario utilizando el método .sum() en la columna "Session Time" del nuevo DataFrame. 
-Este tiempo se convierte a una cadena de texto legible con el método datetime.timedelta(). Si el usuario no se encuentra en el DataFrame, se imprime un mensaje de error.
+Este tiempo se convierte a una cadena de texto legible con el método datetime.timedelta(). 
+Si el usuario no se encuentra en el DataFrame, se imprime un mensaje de error.
 
 #El punto 4 es una función que busca los dispositivos utilizados por un usuario a través de su dirección MAC. 
 La función solicita al usuario que ingrese una dirección MAC y luego busca en el archivo de Excel si existe esa dirección MAC en el DataFrame.
@@ -93,7 +97,8 @@ Luego, agrupa las filas por "MAC Cliente" y "Usuario" y cuenta cuántas veces se
 Finalmente, la función muestra la tabla resultante en la consola y la guarda en un archivo de Excel en la ruta especificada en "cs.PATH_MAC_USER".
 Si la dirección MAC no se encuentra en el DataFrame, la función muestra un mensaje indicando que la dirección MAC no se encontró.
 
-#El punto 5 es una funcion que busca las veces que un dispositivo se ha conectado junto con el usuario que ha utilizado el dispositivo y la cantidad de veces que ha sido utilizado.
+#El punto 5 es una funcion que busca las veces que un dispositivo se ha conectado junto con el usuario 
+que ha utilizado el dispositivo y la cantidad de veces que ha sido utilizado.
 Primero, se muestra un mensaje de carga de datos y se espera un segundo antes de pedirle al usuario que ingrese la dirección MAC del dispositivo que desea buscar. 
 Luego, se carga el archivo xlsx utilizando el método operate_xlsx_file() y se busca en la columna "MAC Cliente" del DataFrame 
 todas las filas que contengan la dirección MAC ingresada por el usuario utilizando el método str.contains(). 
