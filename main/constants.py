@@ -22,16 +22,16 @@ DATETIME_REGEX = r'\d{2}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}'
 
 #PATHS
 PATH_TXT = r"../docs/usuarios.txt"
-FULLPATH_TXT = r"/home/lucas1608/Universidad/Project-RE/docs/usuarios.txt"
+FULLPATH_TXT = r"/home/lucas1608/Universidad/Project_RE/docs/usuarios.txt"
 PATH_XLSX = r"../docs/usuarios.xlsx"
-FULLPATH_XLSX = r"/home/lucas1608/Universidad/Project-RE/docs/usuarios.xlsx"
-USERS_SESSIONS = r"/home/lucas1608/Universidad/Project-RE/files/Users_Sessions_ID.xlsx"
-USERS_SESSIONS_DATE = r"/home/lucas1608/Universidad/Project-RE/files/User_Sessions_Date.xlsx"
-TOTAL_SESSION_TIME = r"/home/lucas1608/Universidad/Project-RE/files/Total_Session_Time.xlsx"
-MAC_USER = r"/home/lucas1608/Universidad/Project-RE/files/Mac_User.xlsx"
-MAC_USER_INFO = r"/home/lucas1608/Universidad/Project-RE/files/Mac_User_Info.xlsx"
-MAC_AP_RANGE = r"/home/lucas1608/Universidad/Project-RE/files/Mac_AP_Range.xlsx"
-MAC_AP_DATE = r"/home/lucas1608/Universidad/Project-RE/files/Mac_AP_Date.xlsx"
+FULLPATH_XLSX = r"/home/lucas1608/Universidad/Project_RE/docs/usuarios.xlsx"
+USERS_SESSIONS = r"/home/lucas1608/Universidad/Project_RE/files/Users_Sessions_ID.xlsx"
+USERS_SESSIONS_DATE = r"/home/lucas1608/Universidad/Project_RE/files/User_Sessions_Date.xlsx"
+TOTAL_SESSION_TIME = r"/home/lucas1608/Universidad/Project_RE/files/Total_Session_Time.xlsx"
+MAC_USER = r"/home/lucas1608/Universidad/Project_RE/files/Mac_User.xlsx"
+MAC_USER_INFO = r"/home/lucas1608/Universidad/Project_RE/files/Mac_User_Info.xlsx"
+MAC_AP_RANGE = r"/home/lucas1608/Universidad/Project_RE/files/Mac_AP_Range.xlsx"
+MAC_AP_DATE = r"/home/lucas1608/Universidad/Project_RE/files/Mac_AP_Date.xlsx"
 
 #INPUTS
 QUESTION_RET = "Volver a menu principal? (Y/n) "

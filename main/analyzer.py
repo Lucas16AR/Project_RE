@@ -207,7 +207,7 @@ class Analyzer:
                 print(cs.JUMP_LINE, cs.VALIDATE_CORRECT, cs.JUMP_LINE)
                 inp = inp.split("  ")
                 inp.append("  ")
-                inp.append("23:59:00")
+                inp.append("23:59:59")
                 date_1 = inp[0] + inp[2] + inp[1]
                 date_2 = inp[0] + inp[2] + inp[3]
                 mac_ap_input = str(input(cs.AP_INPUT))
