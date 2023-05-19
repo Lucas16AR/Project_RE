@@ -18,7 +18,8 @@ MENU = '''
     '''
 
 #REGEX
-DATETIME_REGEX = r'\d{2}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}'
+DATETIME_REGEX1 = r'\d{2}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}'
+DATETIME_REGEX2 = r'\d{2}/\d{2}/\d{4}'
 
 #PATHS
 PATH_TXT = r"../docs/usuarios.txt"
@@ -40,6 +41,7 @@ UN_INP = "Nombre de Usuario: "
 DATETIME_INPUT = "Ingrese la fecha, con el formato >>> DD/MM/YYYY HH:MM:SS: "
 DATETIME_INPUT_1 = "Ingrese la fecha con este formato >>> DD/MM/YYYY HH:MM:SS : "
 DATETIME_INPUT_2 = "Ingrese la fecha con este formato >>> DD/MM/YYYY HH:MM:SS : "
+DATETIME_INPUT_3 = "Ingrese la fecha con este formato >>> DD/MM/YYYY : "
 DATETIME_RANGE_INPUT = "Quiere usar un rango de tiempo para buscar? (Y/N) "
 MAC_USER_INP = "Ingrese la MAC del Usuario para analizar: "
 AP_INPUT = "Ingrese la MAC AP para buscar: "

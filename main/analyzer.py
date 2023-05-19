@@ -36,7 +36,7 @@ class Analyzer:
         print(cs.JUMP_LINE, cs.LOADING_DATA)
         print(cs.JUMP_LINE)
         df = self.operate_xlsx_file()
-        date_regex = re.compile(cs.DATETIME_REGEX)
+        date_regex = re.compile(cs.DATETIME_REGEX1)
         print(cs.DT_RANGE_MSG)
         time.sleep(1)
         print(cs.JUMP_LINE)
@@ -156,7 +156,7 @@ class Analyzer:
 
 #number6
     def mac_ap_date1(self):
-        regex = re.compile(cs.DATETIME_REGEX)
+        regex = re.compile(cs.DATETIME_REGEX1)
         print(cs.JUMP_LINE, cs.LOADING_DATA)
         time.sleep(2)
         print(cs.JUMP_LINE, cs.DT_RANGE_MSG)
@@ -234,11 +234,11 @@ class Analyzer:
 #number7
     def mac_ap_date2(self):
         print(cs.JUMP_LINE)
-        regex = re.compile(cs.DATETIME_REGEX)
+        regex = re.compile(cs.DATETIME_REGEX2)
         print(cs.JUMP_LINE, cs.LOADING_DATA)
         time.sleep(2)
         print(cs.JUMP_LINE)
-        date_input = str(input(cs.DATETIME_INPUT_1))
+        date_input = str(input(cs.DATETIME_INPUT_3))
         validation_date = regex.fullmatch(date_input)
         print(cs.JUMP_LINE)
         print(cs.VALIDATE_CHECKING)
@@ -251,13 +251,14 @@ class Analyzer:
             df['Inicio de Conexion'] = pd.to_datetime(df['Inicio de Conexion'])
             if mac_ap_input in df.values:
                 df_loc = df.loc[:,["MAC AP", "Usuario", "Inicio de Conexion", "Fin de Conexio"]]
-                df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexion"].dt.date == pd.to_datetime(date_input).date())]
+                search_date = pd.to_datetime(date_input, format='%d/%m/%Y').normalize().date()
+                df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexion"].dt.date == search_date)]
                 print(df_mac_date)
                 time.sleep(2)
                 df_mac_date.to_excel(cs.MAC_AP_DATE, index=False)
                 time.sleep(1)
                 print(cs.JUMP_LINE)
-                print(f"La cantidad de veces que se conecto en una fecha especifica se guardara en el archivo 'Mac_AP_Date.xlsx'")
+                print(f"La cantidad de veces que se conectó en una fecha específica se guardará en el archivo 'Mac_AP_Date.xlsx'")
                 print(cs.JUMP_LINE)
                 time.sleep(2)
             else:
@@ -265,3 +266,4 @@ class Analyzer:
         else:
             print(cs.JUMP_LINE, cs.WRONG_DT_1)
         time.sleep(0.1)
+    
